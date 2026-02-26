@@ -1,0 +1,129 @@
+    .stage-selector{display:flex;flex-wrap:wrap;gap:6px}.stage-opt{padding:7px 12px;border-radius:14px;font-size:11px;font-weight:500;border:1px solid rgba(141,110,99,.2);background:var(--cream);color:var(--brown-light);cursor:pointer}.stage-opt.selected{background:var(--brown);color:var(--cream);border-color:var(--brown)}
+    .day-selector{display:flex;gap:6px}.day-opt{flex:1;padding:10px 4px;border-radius:8px;font-size:10px;font-weight:600;text-align:center;border:1px solid rgba(141,110,99,.2);background:var(--cream);color:var(--brown-light);cursor:pointer}.day-opt.selected{background:var(--brown);color:var(--cream)}
+    .status-selector{display:flex;gap:6px}.status-opt{flex:1;padding:10px 8px;border-radius:8px;font-size:10px;font-weight:600;text-align:center;border:1px solid rgba(141,110,99,.2);background:var(--cream);color:var(--brown-light);cursor:pointer}.status-opt.selected.pending{background:var(--brown-light);color:var(--white)}.status-opt.selected.in-progress{background:var(--info);color:var(--white)}.status-opt.selected.done{background:var(--success);color:var(--white)}.status-opt.selected.blocked{background:var(--danger);color:var(--white)}
+    .btn{padding:12px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--brown);color:var(--cream);flex:1}.btn-secondary{background:var(--cream);color:var(--brown);border:1px solid rgba(141,110,99,.2)}
+    .pipeline-view{display:none}.pipeline-view.active{display:block}
+  </style>
+</head>
+<body>
+<header class="header"><div class="header-row"><div class="logo">GROWTH FARM</div><div class="month-badge">Jan 2026</div></div></header>
+<!-- DASHBOARD -->
+<div class="screen active" id="screen-dashboard">
+  <div class="content">
+    <div class="health-score">
+      <div class="health-ring"><svg viewBox="0 0 140 140" width="140" height="140"><circle class="health-ring-bg" cx="70" cy="70" r="58"/><circle class="health-ring-fill yellow" cx="70" cy="70" r="58" stroke-dasharray="364.4" stroke-dashoffset="109"/></svg><div class="health-center"><div class="health-percent">70%</div><div class="health-label">Company Health</div></div></div>
+      <div class="health-breakdown">
+        <div class="health-item"><div class="health-item-score green">82%</div><div class="health-item-label">BD</div></div>
+        <div class="health-item"><div class="health-item-score yellow">65%</div><div class="health-item-label">Ventures</div></div>
+        <div class="health-item"><div class="health-item-score green">75%</div><div class="health-item-label">Clients</div></div>
+        <div class="health-item"><div class="health-item-score yellow">68%</div><div class="health-item-label">Finance</div></div>
+        <div class="health-item"><div class="health-item-score red">45%</div><div class="health-item-label">Team</div></div>
+        <div class="health-item"><div class="health-item-score green">85%</div><div class="health-item-label">Admin</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Business Dev Pipeline <span class="card-badge">R2.1M weighted</span></div>
+      <div class="pipeline-stages">
+        <div class="pipeline-stage"><div class="stage-name">Lead</div><div class="stage-count">2</div><div class="stage-value">R100K</div></div>
+        <div class="pipeline-stage"><div class="stage-name">Discovery</div><div class="stage-count">1</div><div class="stage-value">R160K</div></div>
+        <div class="pipeline-stage"><div class="stage-name">Proposal</div><div class="stage-count">2</div><div class="stage-value">R882K</div></div>
+        <div class="pipeline-stage"><div class="stage-name">Negotiation</div><div class="stage-count">1</div><div class="stage-value">R320K</div></div>
+        <div class="pipeline-stage"><div class="stage-name">Contracting</div><div class="stage-count">0</div><div class="stage-value">R0</div></div>
+        <div class="pipeline-stage"><div class="stage-name">Won</div><div class="stage-count">1</div><div class="stage-value">R1.2M</div></div>
+      </div>
+      <div style="font-size:9px;color:var(--brown-light);text-align:right;">Lead 10% · Discovery 40% · Proposal 60% · Negotiation 80% · Contracting 90% · Won 100%</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Ventures</div>
+      <div class="ventures-row">
+        <div class="venture-chip"><div class="venture-name">Briansfomo</div><div class="venture-stage">MVP Build</div><div class="venture-days">23 days</div></div>
+        <div class="venture-chip"><div class="venture-name">Mntase</div><div class="venture-stage">Discovery</div><div class="venture-days">45 days</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Client Health</div>
+      <div class="client-health-row">
+        <div class="client-bucket"><div class="bucket-dot firm"></div><div class="bucket-count">2</div><div class="bucket-label">Firm</div></div>
+        <div class="client-bucket"><div class="bucket-dot attention"></div><div class="bucket-count">1</div><div class="bucket-label">Attention</div></div>
+        <div class="client-bucket"><div class="bucket-dot at-risk"></div><div class="bucket-count">1</div><div class="bucket-label">At Risk</div></div>
+        <div class="client-bucket"><div class="bucket-dot dormant"></div><div class="bucket-count">0</div><div class="bucket-label">Dormant</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Finance</div>
+      <div class="finance-metric"><div class="finance-header"><span class="finance-name">YTD Revenue</span><span class="finance-values">R1.8M / R2M</span></div><div class="finance-bar"><div class="finance-fill yellow" style="width:75%">R1.8M</div><div class="finance-target-line" style="left:83%"><span class="finance-target-label">Target</span></div></div></div>
+      <div class="finance-metric"><div class="finance-header"><span class="finance-name">Cash Reserves</span><span class="finance-values">R412K / R500K</span></div><div class="finance-bar"><div class="finance-fill green" style="width:82%">R412K</div><div class="finance-target-line" style="left:100%"><span class="finance-target-label">Target</span></div></div></div>
+      <div class="finance-metric"><div class="finance-header"><span class="finance-name">Tax Repayment (Jan)</span><span class="finance-values">R50K / R50K</span></div><div class="finance-bar"><div class="finance-fill green" style="width:100%">R50K ✓</div></div><div style="font-size:10px;color:var(--brown-light);margin-top:4px;">Remaining: R237K</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Admin — Attention</div>
+      <div class="admin-alert"><span class="alert-icon">⚠️</span><span class="alert-text">Contractor Agreements</span><span class="alert-status overdue">Overdue</span></div>
+      <div class="admin-alert"><span class="alert-icon">⏳</span><span class="alert-text">VAT Return</span><span class="alert-status due-soon">Due 25 Jan</span></div>
+      <div class="admin-alert"><span class="alert-icon">⏳</span><span class="alert-text">Client MSAs (2)</span><span class="alert-status due-soon">Expiring</span></div>
+    </div>
+  </div>
+</div>
+<!-- PIPELINES -->
+<div class="screen" id="screen-pipelines">
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showPipeline('bd')">BD</button>
+    <button class="sub-tab" onclick="showPipeline('ventures')">Ventures</button>
+    <button class="sub-tab" onclick="showPipeline('studio')">Studio</button>
+    <button class="sub-tab" onclick="showPipeline('clients')">Clients</button>
+    <button class="sub-tab" onclick="showPipeline('finance')">Finance</button>
+    <button class="sub-tab" onclick="showPipeline('admin')">Admin</button>
+  </div>
+  <div class="pipeline-view active" id="pipeline-bd">
+    <div class="kanban-board">
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Lead</span><span class="column-count">2</span></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">Nedbank Digital</div><div class="kcard-sub">Design sprint</div><div class="kcard-meta"><span class="kcard-value">R320K</span><span class="kcard-avatar">ZN</span></div></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">Standard Bank</div><div class="kcard-sub">UX audit</div><div class="kcard-meta"><span class="kcard-value">R180K</span><span class="kcard-avatar">TM</span></div></div>
+        <button class="add-card-btn" onclick="openModal('bd-card')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add</button></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Discovery</span><span class="column-count">1</span></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">IBM Accelerator</div><div class="kcard-sub">Programme</div><div class="kcard-meta"><span class="kcard-value">R400K</span><span class="kcard-tag">Feb 3</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Proposal</span><span class="column-count">2</span></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">IFC Agriculture</div><div class="kcard-sub">Advisory</div><div class="kcard-meta"><span class="kcard-value">R850K</span><span class="kcard-tag">12d</span></div></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">AGRA Phase 2</div><div class="kcard-sub">Trade corridors</div><div class="kcard-meta"><span class="kcard-value">R620K</span><span class="kcard-tag">5d</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Negotiation</span><span class="column-count">1</span></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">Vodacom</div><div class="kcard-sub">Digital transformation</div><div class="kcard-meta"><span class="kcard-value">R400K</span><span class="kcard-avatar">ZN</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Contracting</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Won</span><span class="column-count">1</span></div>
+        <div class="kanban-card" onclick="openModal('bd-card')"><div class="kcard-title">Gates Foundation</div><div class="kcard-sub">R&D Strategy</div><div class="kcard-meta"><span class="kcard-value">R1.2M</span><span class="kcard-tag">Jan 15</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Lost</span><span class="column-count">0</span></div></div>
+    </div>
+  </div>
+  <div class="pipeline-view" id="pipeline-ventures">
+    <div class="kanban-board">
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Idea Dump</span><span class="column-count">0</span></div><button class="add-card-btn" onclick="openModal('venture-card')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add idea</button></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Concept</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Discovery</span><span class="column-count">1</span></div>
+        <div class="kanban-card venture" onclick="openModal('venture-card')"><div class="kcard-title">Mntase Communities</div><div class="kcard-sub">Student accommodation</div><div class="kcard-meta"><span class="kcard-tag" style="color:var(--warning)">45 days</span><span class="kcard-avatar">ZN</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">MVP Build</span><span class="column-count">1</span></div>
+        <div class="kanban-card venture" onclick="openModal('venture-card')"><div class="kcard-title">Briansfomo</div><div class="kcard-sub">Curated gatherings</div><div class="kcard-meta"><span class="kcard-tag" style="color:var(--danger)">15d to launch</span><span class="kcard-avatar">ZN</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Pilot</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Live</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Scaling</span><span class="column-count">0</span></div></div>
+    </div>
+  </div>
+  <div class="pipeline-view" id="pipeline-studio">
+    <div class="kanban-board">
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Scoping</span><span class="column-count">1</span></div>
+        <div class="kanban-card studio" onclick="openModal('studio-card')"><div class="kcard-title">Digital Strategy</div><div class="kcard-sub">Nedbank</div><div class="kcard-meta"><span class="kcard-value">80 hrs</span><span class="kcard-avatar">TM</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Contracted</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">In Progress</span><span class="column-count">3</span></div>
+        <div class="kanban-card studio" onclick="openModal('studio-card')"><div class="kcard-title">R&D Strategy</div><div class="kcard-sub">Gates Foundation</div><div class="kcard-meta"><span class="kcard-value">142/160</span><span class="kcard-tag" style="color:var(--warning)">89%</span></div></div>
+        <div class="kanban-card studio" onclick="openModal('studio-card')"><div class="kcard-title">Food Corridors</div><div class="kcard-sub">AGRA</div><div class="kcard-meta"><span class="kcard-value">68/120</span><span class="kcard-tag" style="color:var(--success)">57%</span></div></div>
+        <div class="kanban-card studio" onclick="openModal('studio-card')"><div class="kcard-title">Procurement</div><div class="kcard-sub">VUT</div><div class="kcard-meta"><span class="kcard-value">52/40</span><span class="kcard-tag" style="color:var(--danger)">130%</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Review</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Complete</span><span class="column-count">0</span></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Closed</span><span class="column-count">0</span></div></div>
+    </div>
+  </div>
+  <div class="pipeline-view" id="pipeline-clients">
+    <div class="kanban-board">
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Firm</span><span class="column-count">2</span></div>
+        <div class="kanban-card client" onclick="openModal('client-card')"><div class="kcard-title">Gates Foundation</div><div class="kcard-sub">2 projects</div><div class="kcard-meta"><span class="kcard-value">R1.2M</span><span class="kcard-tag">2d</span></div></div>
+        <div class="kanban-card client" onclick="openModal('client-card')"><div class="kcard-title">AGRA</div><div class="kcard-sub">1 project</div><div class="kcard-meta"><span class="kcard-value">R620K</span><span class="kcard-tag">5d</span></div></div></div>
+      <div class="kanban-column"><div class="column-header"><span class="column-title">Attention</span><span class="column-count">1</span></div>
+        <div class="kanban-card client" onclick="openModal('client-card')"><div class="kcard-title">VUT</div><div class="kcard-sub">Over budget</div><div class="kcard-meta"><span class="kcard-value">R180K</span><span class="kcard-tag" style="color:var(--warning)">12d</span></div></div></div>
+(Content truncated due to size limit. Use line ranges to read remaining content)
